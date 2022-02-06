@@ -1,0 +1,76 @@
+.box-container {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.image {
+  width: 70px;
+  height: 70px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.upvote {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+}
+.name {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  color: #636876;
+  font-weight: 600;
+  font-size: 16px;
+}
+.description {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: flex-start;
+  color: #667190;
+}
+.info {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: row;
+  font-size: 12px;
+  color: #667190;
+}
+
+.upvote {
+  width: 15%;
+  height: 100%;
+  display: flex;
+}
+.inner-box {
+  width: 54px;
+  height: 66px;
+  border: 0.5px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
