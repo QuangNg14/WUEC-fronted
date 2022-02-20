@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { Provider as NameProvider } from "./contexts/searchContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <NameProvider>
+      <App />
+    </NameProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

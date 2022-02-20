@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./App.css";
 import StartupBox from "./components/StartupBox";
+import Header from "./header/Header";
+import { Context as NameContext } from "./contexts/searchContext";
 
 const data = [
   {
@@ -61,26 +63,37 @@ const data = [
 
 function App() {
   const [dataList, setDataList] = useState(data);
-  console.log(dataList);
+
+  const {
+    state: { name },
+  } = useContext(NameContext);
   return (
     <div className="App">
+      <Header />
       <div className="header">
         <div>The complete list of unicorn startups</div>
       </div>
       <div className="container">
         {dataList &&
-          dataList.map((elem) => {
-            return (
-              <StartupBox
-                name={elem.name}
-                description={elem.description}
-                image={elem.image}
-                upvotes={elem.upvotes}
-                type={elem.type}
-                numComments={elem.numComments}
-              />
-            );
-          })}
+          dataList
+            .filter((elem) =>
+              elem.name
+                .replace(/\s+/g, "")
+                .toLowerCase()
+                .includes(name.toLowerCase().replace(/\s+/g, ""))
+            )
+            .map((elem) => {
+              return (
+                <StartupBox
+                  name={elem.name}
+                  description={elem.description}
+                  image={elem.image}
+                  upvotes={elem.upvotes}
+                  type={elem.type}
+                  numComments={elem.numComments}
+                />
+              );
+            })}
       </div>
     </div>
   );
