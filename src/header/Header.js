@@ -12,19 +12,20 @@ const Header = () => {
   return (
     <div className="header-container">
       <div className="title">
-        <h3>DEVPOST</h3>
+        <h3>WUEC Entrepreneurship Hub</h3>
       </div>
       <div className="tabs">
-        <div>Hackathons</div>
-        <div>Projects</div>
-        <div>Host a Hackathon</div>
+      <div>About</div>
+        <div>Startups Archive</div>
+        <div>Community Forum</div>
+        <div>Post your project</div>
       </div>
       <div className="searchBar">
         <div className="searchInputsCourse">
           <input
             type="text"
             className="header-search"
-            placeholder="Search projects"
+            placeholder="Search startups"
             name="s"
             value={name}
             onChange={(e) => findName(e.target.value)}
@@ -37,7 +38,7 @@ const Header = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "#003e54",
+            backgroundColor: "#15325c",
             color: "white",
           }}
         >

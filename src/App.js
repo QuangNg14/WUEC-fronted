@@ -6,6 +6,15 @@ import { Context as NameContext } from "./contexts/searchContext";
 
 const data = [
   {
+    name: "Wharton Undergraduate Entrepreneurship Club (WUEC)",
+    description: "A tight network of students interested in entrepreneurship",
+    image:
+      "https://media-exp1.licdn.com/dms/image/C4E0BAQHMrRu0HMrB6g/company-logo_200_200/0/1640988977783?e=2159024400&v=beta&t=tUlqVb99wxhFqYFt6v7U7-_WvpwJgsXzEsQyHKKIdc8",
+    upvotes: 300,
+    type: "Wharton Club",
+    numComments: 50,
+  },
+  {
     name: "Wunderbucket",
     description: "Static hosting for designers and developers",
     image:
@@ -71,8 +80,14 @@ function App() {
     <div className="App">
       <Header />
       <div className="header">
-        <div>The complete list of unicorn startups</div>
+        <div className="banner">
+          <h1>Explore startup ideas from fellow Quakers</h1>
+          <button>Post your project</button>
+        </div>
       </div>
+      <div>
+   
+<div className="dashboard-container">
       <div className="container">
         {dataList &&
           dataList
@@ -94,7 +109,43 @@ function App() {
                 />
               );
             })}
+              
+      
+      
+      
       </div>
+      <div className="right">
+      <div className="mb-30 col-md-6 col-lg-4">
+            <div className="card">
+              {/* <img className="card-icon" src="https://quatamiha.files.wordpress.com/2021/07/nerdinvestor-1.png" /> */}
+              <h3 className="card-title">Blog post #1: New trends in the FinTech space 2022</h3>
+              <p className="card-text">These are 10 new startups in FinTech you should follow right now. <b>Read more</b></p>
+             
+            </div>
+          </div>
+          <div className="mb-30 col-md-6 col-lg-4">
+            <div className="card">
+              {/* <img className="card-icon" src="https://quatamiha.files.wordpress.com/2021/07/nerdinvestor-2.png" /> */}
+              <h3 className="card-title">Blog post #2: Podcasts on entrepreneurship we recommend< /h3>
+              <p className="card-text">Bla bla bla this is dummy data for blog post (aligned right on home page). <b>Read more</b></p>
+        
+            </div>
+          </div>
+          <div className="mb-30 col-md-6 col-lg-4">
+            <div className="card">
+              {/* <img className="card-icon" src="https://quatamiha.files.wordpress.com/2021/07/nerdinvestor-3.png" /> */}
+              <h3 className="card-title">Blog post #3: The Fed's movements this quarter</h3>
+              <p className="card-text">Bla bla bla this is dummy data for blog post (aligned right on home page). <b>Read more</b></p>
+             
+            </div>
+          </div>
+      </div>
+           
+      
+      </div>
+     
+     
+    </div>
     </div>
   );
 }

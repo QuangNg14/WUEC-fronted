@@ -3,23 +3,26 @@
   height: 70px;
   display: flex;
   flex-direction: row;
+  background: #f97171;
 }
 
 .title {
-  width: 10%;
+  width: 20%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #15325c
 }
 
 .tabs {
-  width: 30%;
+  width: 45%;
   height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  color:#edf1f2
 }
 
 .searchBar {
