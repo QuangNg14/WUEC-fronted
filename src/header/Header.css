@@ -7,7 +7,7 @@
 }
 
 .title {
-  width: 20%;
+  width: 30%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -16,7 +16,7 @@
 }
 
 .tabs {
-  width: 45%;
+  width: 35%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -26,11 +26,21 @@
 }
 
 .searchBar {
-  width: 30%;
+  width: 25%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.login {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#edf1f2
+
 }
 
 .searchInputsCourse {

@@ -1,7 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Header.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Context as NameContext } from "../contexts/searchContext";
+import { db } from "../services/firebase";
+import { useAuth } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [value, setValue] = useState("");
@@ -9,15 +12,22 @@ const Header = () => {
     state: { name },
     findName,
   } = useContext(NameContext);
+  const { logout } = useAuth();
+  const user = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
+  const onLogout = () => {
+    navigate("/login");
+    logout();
+  };
   return (
     <div className="header-container">
       <div className="title">
-        <h3>WUEC Entrepreneurship Hub</h3>
+        <h5>WUEC Entrepreneurship Hub</h5>
       </div>
       <div className="tabs">
-      <div>About</div>
-        <div>Startups Archive</div>
-        <div>Community Forum</div>
+        <div>About</div>
+        <div>Archive</div>
+        <div>Forum</div>
         <div>Post your project</div>
       </div>
       <div className="searchBar">
@@ -45,7 +55,20 @@ const Header = () => {
           <AiOutlineSearch size={25} />
         </div>
       </div>
-      <div className="login"></div>
+      <div className="login">
+        {user && (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              width: "60%",
+              justifyContent: "space-around",
+            }}
+          >
+            <div>{user.name}</div> / <div onClick={onLogout}>Sign Out</div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

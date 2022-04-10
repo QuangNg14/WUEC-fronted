@@ -2,12 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { Provider as NameProvider } from "./contexts/searchContext";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <NameProvider>
-      <App />
-    </NameProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <NameProvider>
+          <App />
+        </NameProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
