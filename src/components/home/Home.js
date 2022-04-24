@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import "./Home.css";
 import StartupBox from "../StartupBox";
-import Header from "../../header/Header";
+import Header from "../header/Header"
 import { Context as NameContext } from "../../contexts/searchContext";
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -76,15 +77,10 @@ function Home() {
   const {
     state: { name },
   } = useContext(NameContext);
+  const navigate = useNavigate()
   return (
     <div className="App">
-      <Header />
-      <div className="header">
-        <div className="banner">
-          <h1>Explore startup ideas from fellow Quakers</h1>
-          <button>Post your project</button>
-        </div>
-      </div>
+  
       <div>
         <div className="dashboard-container">
           <div className="container">
@@ -148,6 +144,12 @@ function Home() {
             </div>
           </div>
         </div>
+        <div className="header">
+        <div className="banner">
+          <h1>Explore startup ideas from fellow Quakers</h1>
+          <button onClick={()=>{navigate("/form")}}>Post your project</button>
+        </div>
+      </div>
       </div>
     </div>
   );

@@ -39,7 +39,7 @@
   height: 30%;
   display: flex;
   justify-content: flex-start;
-  color: #15325c;
+  color: #0f457f;
   font-weight: bold;
   font-size: 16px;
 }
@@ -48,7 +48,7 @@
   height: 30%;
   display: flex;
   justify-content: flex-start;
-  color: #fb7375;
+  color: #0f457f;
 }
 .info {
   width: 100%;
