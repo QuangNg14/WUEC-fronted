@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect} from "react";
 import "./Home.css";
 import StartupBox from "../StartupBox";
 import Header from "../header/Header"
@@ -73,6 +73,18 @@ const data = [
 
 function Home() {
   const [dataList, setDataList] = useState(data);
+  
+
+  useEffect(() => {
+    fetch(
+      "http://ec2-34-227-149-210.compute-1.amazonaws.com:8080/company")
+            .then((res) => res.json())
+            .then((json) => {
+              setDataList(json)
+          }
+    )
+  }, []);
+
 
   const {
     state: { name },
