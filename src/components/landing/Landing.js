@@ -6,11 +6,13 @@ import StartupBox from "../StartupBox";
 import Header from "../header/Header";
 import Home from "../home/Home";
 import { Context as NameContext } from "../../contexts/searchContext";
+import Blog from "../blog/Blog";
 
 function Landing() {
   return (
     <div className="App">
       <Header />
+      <div className="please-change-bg">
       <div>
         <div className="app-container">
           <div className="app-content">
@@ -363,6 +365,7 @@ function Landing() {
           </div>
         </div>
       </div>{" "}
+      <div>
       <div className="app-header">
         <div className="app-header-left">
           <p className="app-name">Project Archive</p>
@@ -387,9 +390,15 @@ function Landing() {
           </div>
         </div>
         <div className="app-header-right"></div>
+       
       </div>
       <Home />
+      </div>
+      </div>
+    
+    
       <footer>
+        
         <div className="footer-container">
           <div className="footer-row">
             <ul>

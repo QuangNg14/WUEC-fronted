@@ -25,9 +25,7 @@ background-image: url("https://image.ibb.co/de6JzG/bitmap_1_1.png");
   display: block;
 }
 
-.sect--grey {
-  /*background-color: #ebeff9;*/
-}
+
 
 .sect--violet {
   background-color: #6f79ff;
@@ -41,9 +39,7 @@ background-image: url("https://image.ibb.co/de6JzG/bitmap_1_1.png");
   padding-top: 90px;
 }
 
-.sect--white {
-  /* background-color:#fff;*/
-}
+
 .row--center {
   max-width: 1000px;
   margin: 0 auto;
@@ -757,7 +753,7 @@ background-image: url("https://image.ibb.co/de6JzG/bitmap_1_1.png");
     margin-right: 10px;
     margin-top: 10px;
   }
-  .header__container {
+  .header__container2 {
     width: 100%;
     padding: 0;
   }

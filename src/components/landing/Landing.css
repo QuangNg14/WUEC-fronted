@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+.please-change-bg {
+  background-color: #f3f6fd;
+}
 .app-container {
     height: 100%;
     overflow: scroll;
@@ -64,6 +67,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: var(--app-container);
+  /* background-color: red; */
 }
 
 button,

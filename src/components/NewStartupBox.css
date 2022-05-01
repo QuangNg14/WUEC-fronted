@@ -1,8 +1,8 @@
 .box-container{
     width: 20%;
     height: 400px;
-    background-color: red;
-    border: 1px solid grey;
+    background-color: white;
+    /* border: 1px solid grey; */
     margin-right: 30px;
 }
 
@@ -34,6 +34,6 @@
 }
 
 .project-description{
-    width: 100%;
+    width: 96%;
     height: 80%;
 }
