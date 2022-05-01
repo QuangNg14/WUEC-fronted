@@ -1,7 +1,8 @@
-import { useContext, useState, useEffect} from "react";
+import { useContext, useState, useEffect } from "react";
 import "./Home.css";
 import StartupBox from "../StartupBox";
-import Header from "../header/Header"
+import NewStartupBox from "../NewStartupBox";
+import Header from "../header/Header";
 import { Context as NameContext } from "../../contexts/searchContext";
 import { useNavigate } from "react-router-dom";
 
@@ -69,30 +70,36 @@ const data = [
     type: "Design Tools",
     numComments: 15,
   },
+  {
+    name: "Reaktr",
+    description: "Generate beautiful audio-reactive video easily",
+    image:
+      "https://ph-files.imgix.net/f4c773a8-07fa-440c-8ae6-10dab22baf1d.png?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=60&h=60&fit=crop&bg=0fff&dpr=1",
+    upvotes: 82,
+    type: "Design Tools",
+    numComments: 15,
+  },
 ];
 
 function Home() {
   const [dataList, setDataList] = useState(data);
-  
 
-  useEffect(() => {
-    fetch(
-      "http://ec2-34-227-149-210.compute-1.amazonaws.com:8080/company")
-            .then((res) => res.json())
-            .then((json) => {
-              setDataList(json)
-          }
-    )
-  }, []);
-
+  // useEffect(() => {
+  //   fetch(
+  //     "http://ec2-34-227-149-210.compute-1.amazonaws.com:8080/company")
+  //           .then((res) => res.json())
+  //           .then((json) => {
+  //             setDataList(json)
+  //         }
+  //   )
+  // }, []);
 
   const {
     state: { name },
   } = useContext(NameContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="App">
-  
       <div>
         <div className="dashboard-container">
           <div className="container">
@@ -106,21 +113,21 @@ function Home() {
                 )
                 .map((elem) => {
                   return (
-                    <StartupBox
+                    <NewStartupBox
                       name={elem.name}
                       description={elem.description}
                       image={elem.image}
-                      upvotes={elem.upvotes}
-                      type={elem.type}
-                      numComments={elem.numComments}
+                      // upvotes={elem.upvotes}
+                      // type={elem.type}
+                      // numComments={elem.numComments}
                     />
                   );
                 })}
           </div>
-          <div className="right">
+          {/* <div className="right">
             <div className="mb-30 col-md-6 col-lg-4">
               <div className="card">
-                {/* <img className="card-icon" src="https://quatamiha.files.wordpress.com/2021/07/nerdinvestor-1.png" /> */}
+                <img className="card-icon" src="https://quatamiha.files.wordpress.com/2021/07/nerdinvestor-1.png" />
                 <h3 className="card-title">
                   Blog post #1: New trends in the FinTech space 2022
                 </h3>
@@ -132,7 +139,7 @@ function Home() {
             </div>
             <div className="mb-30 col-md-6 col-lg-4">
               <div className="card">
-                {/* <img className="card-icon" src="https://quatamiha.files.wordpress.com/2021/07/nerdinvestor-2.png" /> */}
+                <img className="card-icon" src="https://quatamiha.files.wordpress.com/2021/07/nerdinvestor-2.png" />
                 <h3 className="card-title">
                   Blog post #2: Podcasts on entrepreneurship we recommend
                 </h3>
@@ -144,7 +151,7 @@ function Home() {
             </div>
             <div className="mb-30 col-md-6 col-lg-4">
               <div className="card">
-                {/* <img className="card-icon" src="https://quatamiha.files.wordpress.com/2021/07/nerdinvestor-3.png" /> */}
+                <img className="card-icon" src="https://quatamiha.files.wordpress.com/2021/07/nerdinvestor-3.png" />
                 <h3 className="card-title">
                   Blog post #3: The Fed's movements this quarter
                 </h3>
@@ -154,14 +161,20 @@ function Home() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="header">
-        <div className="banner">
-          <h1>Explore startup ideas from fellow Quakers</h1>
-          <button onClick={()=>{navigate("/form")}}>Post your project</button>
+          <div className="banner">
+            <h1>Explore startup ideas from fellow Quakers</h1>
+            <button
+              onClick={() => {
+                navigate("/form");
+              }}
+            >
+              Post your project
+            </button>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );
